@@ -1,9 +1,6 @@
-from dotenv import load_dotenv
-import os
 import requests as r
 import streamlit as st
-load_dotenv()
-api_key = os.getenv("OMDB_API_KEY")
+api_key = st.secrets["OMDB_API_KEY"]
 
 def buscar_filme(Titulo):
     url = f"http://www.omdbapi.com/?apikey={api_key}&s={Titulo}"
